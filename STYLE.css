@@ -18,3 +18,18 @@ body {
     justify-content: space-between;
     width: 100%;
 }
+
+.main-container-images {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.images-container {
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    height: 300px;
+    justify-content: center;
+    width: 33%;
+}
