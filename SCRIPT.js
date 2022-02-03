@@ -11,3 +11,17 @@ const especie3 = document.getElementById('species3');
 const condicao1 = document.getElementById('status1');
 const condicao2 = document.getElementById('status2');
 const condicao3 = document.getElementById('status3');
+
+gerarValorAleatorio = () => {
+    return Math.floor(Math.random()* 671);
+}
+
+traduzirCondicao = ( data ) => {
+    if ( data . status == 'unknown' ) {
+        return 'Não sei' ;
+    } else if ( data . status == 'Alive' ) {
+        return 'Sim' ;
+    } else {
+        return 'Não. Está morto' ;
+    }
+}
