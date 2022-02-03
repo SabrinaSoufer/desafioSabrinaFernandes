@@ -46,7 +46,35 @@ pegarPersonagem1 = () =>{
         especie1.innerHTML = data.species;
         condicao1.innerHTML = traduzirCondicao (data);
     });
-    return
+
+    fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio2}`, {
+     method: 'GET',
+     headers: {
+         Accept: 'application/json',
+         "Content-type": 'application/json'
+     }
+    }).then((response) => response.json().then((data) => {
+        imagem2.src = data.image;
+        imagem2.alt = data.name;
+        nomeDoPersonagen2.innerHTML = data.name;
+        especie2.innerHTML = data.species;
+        condicao2.innerHTML = traduzirCondicao(data);
+    });
+
+    fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio3}`, {
+     method: 'GET',
+     headers: {
+         Accept: 'application/json',
+         "Content-type": 'application/json'
+     }
+    }).then((response) =>.json().then((data) => {
+        imagem3.src = data.image;
+        imagem3.alt = data.name;
+        nomeDoPersonagen3.innerHTML = data.name;
+        especie3.innerHTML = data.species;
+        condicao3.innerHTML = traduzirCondicao(data);
+    });
+return
 
 }
 
