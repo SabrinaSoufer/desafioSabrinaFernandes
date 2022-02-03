@@ -16,6 +16,7 @@ gerarValorAleatorio = () => {
     return Math.floor(Math.random()* 671);
 }
 
+
 traduzirCondicao = ( data ) => {
     if ( data . status == 'unknown' ) {
         return 'Não sei' ;
@@ -25,3 +26,28 @@ traduzirCondicao = ( data ) => {
         return 'Não. Está morto' ;
     }
 }
+
+
+pegarPersonagem1 = () =>{
+    let numeroAleatorio1 = gerarValorAleatorio();
+    let numeroAleatorio2 = gerarValorAleatorio();
+    let numeroAleatorio3 = gerarValorAleatorio();
+    
+    fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio1}`, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            "Content-type": 'application/json'
+        }
+    }).then((response) => response.json()).then((data) => {
+        imagem1.src = data.image;
+        imagem1.alt = data.name;
+        nomeDoPersonagen1.innerHTML = data.name;
+        especie1.innerHTML = data.species;
+        condicao1.innerHTML = traduzirCondicao (data);
+    });
+    return
+
+}
+
+botao.onclick = pegarPersonagem1;
